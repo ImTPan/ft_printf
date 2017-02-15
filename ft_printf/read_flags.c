@@ -6,13 +6,13 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/31 13:27:25 by tpan              #+#    #+#             */
-/*   Updated: 2017/01/31 22:28:09 by tpan             ###   ########.fr       */
+/*   Updated: 2017/02/08 10:31:31 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static	int		check_flag(char c, t_flags *flags)
+static int	check_flag(char c, t_flags *flags)
 {
 	if (c == '#')
 		return (flags->hash = 1);
@@ -27,12 +27,12 @@ static	int		check_flag(char c, t_flags *flags)
 	return (0);
 }
 
-int		read_flags(t_conversion *conversion, t_format *format)
+int			read_flags(t_conversion *conversion, t_format *format)
 {
 	char	c;
 
 	while ((c = format->str[format->index])
-				&& check_flag(c, conversion->flags))
-			format->index++;
-	return (valid);
+				&& check_flag(c, &conversion->flags))
+		format->index++;
+	return (VALID);
 }
