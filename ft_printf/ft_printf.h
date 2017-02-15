@@ -22,7 +22,7 @@
 
 typedef enum	e_bool
 {
-	FALSE,TRUE 
+	FALSE, TRUE 
 }				t_bool;
 
 typedef struct		s_flags
@@ -32,8 +32,34 @@ typedef struct		s_flags
 	t_bool	show_sign;
 	t_bool	left_justify;
 	t_bool	pad_zeros;
-}					t_flags;
+}			t_flags;
 
+typedef	struct		s_format
+{
+	const char	*str;
+	size_t		index;
+	size_t		chars_written;
+}			t_format;
 
+typedef enum		e_length
+{
+	DEFAULT, HH, H, L, LL, J, Z
+}			t_length;
+
+typedef enum		e_specifier
+{
+	S_DECIMAL, U_DECIMAL, OCTAL, HEX_LOWER, HEX_UPPER, CHAR, STRING, POINTER,
+	INVALID_SPECIFIER
+}			t_specifier;
+
+typedef struct		s_conversion
+{
+	t_flags		flags;
+	unsigned int	width;
+	unsigned int	precision;
+	t_bool		precision_set;
+	t_length	length;
+	t_specifier	specifier;
+}			t_conversion;
 
 #endif
