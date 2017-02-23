@@ -6,7 +6,7 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/31 08:18:32 by tpan              #+#    #+#             */
-/*   Updated: 2017/02/15 20:23:32 by tpan             ###   ########.fr       */
+/*   Updated: 2017/02/22 22:12:06 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,11 @@ typedef struct		s_conversion
 	t_length		length;
 	t_specifier		specifier;
 }			t_conversion;
+
+int			read_flags(t_conversion *conversion, t_format *format);
+int			read_length(t_conversion *conversion, t_format *format);
+static int	read_precision(t_conversion *conversion, va_list ap,
+				t_format *format);
+static t_specifier compare_specifiers(char c);
 
 #endif
