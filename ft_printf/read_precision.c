@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   read_precision.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/02/15 11:41:37 by tpan              #+#    #+#             */
+/*   Updated: 2017/02/15 12:00:18 by tpan             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 static int		treat_negative_precision_as_none(t_conversion *conversion,
@@ -7,13 +19,8 @@ static int		treat_negative_precision_as_none(t_conversion *conversion,
 	format->index++;
 	while (ft_isdigit(format->str[format->index]))
 		format->index++;
-	return (GOOD);
+	return (VALID);
 }
-
-/*
-** This function will look for a precision value in the format string and store
-** it if present.
-*/
 
 int				read_precision(t_conversion *conversion, va_list ap,
 												t_format *format)
@@ -28,7 +35,7 @@ int				read_precision(t_conversion *conversion, va_list ap,
 			conversion->precision = va_arg(ap, unsigned int);
 			conversion->precision_set = 1;
 			format->index++;
-			return (GOOD);
+			return (VALID);
 		}
 		if (ft_isdigit(format->str[format->index]))
 		{
@@ -36,9 +43,9 @@ int				read_precision(t_conversion *conversion, va_list ap,
 			conversion->precision_set = 1;
 			while (ft_isdigit(format->str[format->index]))
 				format->index++;
-			return (GOOD);
+			return (VALID);
 		}
-		return (ERROR); // I'm not sure if this should ERROR or ignore/continue
+		return (INVALID);
 	}
-	return (GOOD);
+	return (VALID);
 }

@@ -6,7 +6,7 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/31 08:18:32 by tpan              #+#    #+#             */
-/*   Updated: 2017/02/01 14:54:33 by tpan             ###   ########.fr       */
+/*   Updated: 2017/02/15 20:23:32 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,22 +44,22 @@ typedef	struct		s_format
 typedef enum		e_length
 {
 	DEFAULT, HH, H, L, LL, J, Z
-}			t_length;
+}					t_length;
 
 typedef enum		e_specifier
 {
 	S_DECIMAL, U_DECIMAL, OCTAL, HEX_LOWER, HEX_UPPER, CHAR, STRING, POINTER,
 	INVALID_SPECIFIER
-}			t_specifier;
+}					t_specifier;
 
 typedef struct		s_conversion
 {
-	t_flags		flags;
+	t_flags			flags;
 	unsigned int	width;
 	unsigned int	precision;
-	t_bool		precision_set;
-	t_length	length;
-	t_specifier	specifier;
+	t_bool			precision_set;
+	t_length		length;
+	t_specifier		specifier;
 }			t_conversion;
 
 #endif
