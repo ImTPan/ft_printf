@@ -6,14 +6,14 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/31 08:18:32 by tpan              #+#    #+#             */
-/*   Updated: 2017/02/22 22:12:06 by tpan             ###   ########.fr       */
+/*   Updated: 2017/02/23 17:11:23 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef	FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include "./libft/libft.h"
+# include "../libft/libft.h"
 # include <stdarg.h>
 # include <wchar.h>
 
@@ -64,8 +64,11 @@ typedef struct		s_conversion
 
 int			read_flags(t_conversion *conversion, t_format *format);
 int			read_length(t_conversion *conversion, t_format *format);
-static int	read_precision(t_conversion *conversion, va_list ap,
+int			read_precision(t_conversion *conversion, va_list ap,
 				t_format *format);
-static t_specifier compare_specifiers(char c);
+int			read_specifier(t_conversion *conversion, t_format *format);
+int			read_width(t_conversion *conversion, va_list arguments,
+				t_format *format);
+
 
 #endif

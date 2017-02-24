@@ -6,7 +6,7 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/15 12:13:06 by tpan              #+#    #+#             */
-/*   Updated: 2017/02/22 22:20:26 by tpan             ###   ########.fr       */
+/*   Updated: 2017/02/23 10:13:25 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,10 @@ int		read_specifier(t_conversion *conversion, t_format *format)
 		return (INVALID);
 	c = format->str[format->index];
 	conversion->specifier = compare_specifiers(format->str[format->index]);
-
+	if (conversion->specifier == INVALID_SPECIFIER)
+		return (INVALID);
+	if (c =='D' || c == 'U' || c == 'O' || c == 'C' || c == 'S')
+		conversion->length = L;
+	format->index++;
+	return (VALID);
 }
