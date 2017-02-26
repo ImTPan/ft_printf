@@ -6,7 +6,7 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/25 12:20:05 by tpan              #+#    #+#             */
-/*   Updated: 2017/02/25 19:31:21 by tpan             ###   ########.fr       */
+/*   Updated: 2017/02/26 15:04:26 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,6 @@ void	write_chars(t_conversion *conversion, va_list ap,
 	if (conversion->flags.hash)
 		return ;
 	draft = ft_strnew(1);
-
+	*draft = va_arg(ap ,int);
+	
 }
