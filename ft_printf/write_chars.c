@@ -21,5 +21,8 @@ void	write_chars(t_conversion *conversion, va_list ap,
 		return ;
 	draft = ft_strnew(1);
 	*draft = va_arg(ap ,int);
-	
+	apply_width(conversion, &draft);
+	ft_putstr(draft);
+	format->chars_written += ft_strlen(draft);
+	ft_memdel((void **)&draft);
 }
