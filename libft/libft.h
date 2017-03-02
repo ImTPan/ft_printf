@@ -6,7 +6,7 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/31 18:59:29 by tpan              #+#    #+#             */
-/*   Updated: 2016/12/14 08:32:40 by tpan             ###   ########.fr       */
+/*   Updated: 2017/03/01 19:51:26 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,4 +90,6 @@ void				ft_reverse(char s[]);
 void				ft_putendl(char const *s);
 int					ft_isnegative(int c);
 char				*ft_realloc(char *ptr, size_t size);
+size_t				ft_wstrlen(wchar_t const *str);
+wchar_t				*ft_wstrndup(const char *s1, size_t n);
 #endif

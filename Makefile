@@ -6,7 +6,7 @@
 #    By: tpan <marvin@42.fr>                        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/10/31 18:58:43 by tpan              #+#    #+#              #
-#    Updated: 2017/01/31 08:20:23 by tpan             ###   ########.fr        #
+#    Updated: 2017/03/01 20:04:13 by tpan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,9 +42,15 @@ LIBFT_COMPILED 	= ft_strlen.o ft_strncpy.o ft_strcpy.o \
 				ft_lstnew.o ft_lstdelone.o ft_itoa.o \
 				ft_lstdel.o ft_lstiter.o ft_lstmap.o \
 				ft_strsub.o ft_lstadd.o ft_isnegative.o \
-				ft_reverse.o ft_realloc.o\
+				ft_reverse.o ft_realloc.o ft_wstrlen.o \
+				ft_wstrndup.o \
 
-FT_PRINTF_COMPILED = read_flags.o \
+FT_PRINTF_COMPILED = read_flags.o read_precision.o \
+					 read_width.o read_length.o read_specifier.o \
+					 app_wchar_width.o apply_precision.o \
+					 apply_prefix.o apply_width.o \
+					 compatible_flags.o ft_printf.o \
+					 ft_vprintf.o write_chars.o \
 
 COMPILED =		$(LIBFT_COMPILED) $(FT_PRINTF_COMPILED)
 
