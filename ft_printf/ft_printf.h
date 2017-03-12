@@ -6,7 +6,7 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/31 08:18:32 by tpan              #+#    #+#             */
-/*   Updated: 2017/02/25 19:01:38 by tpan             ###   ########.fr       */
+/*   Updated: 2017/03/02 15:33:04 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,10 @@ int			read_specifier(t_conversion *conversion, t_format *format);
 int			read_width(t_conversion *conversion, va_list arguments,
 				t_format *format);
 void		ft_vprintf(char *format, int ap);
+void		apply_width_wchar(t_conversion *conversion, wchar_t **draft);
+void		apply_precision(t_conversion *conversion, char **draft);
+void		apply_prefix(t_conversion *conversion, char **draft);
+void		apply_width(t_conversion *conversion, char **draft);
+
 
 #endif
