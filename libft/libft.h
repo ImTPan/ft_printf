@@ -6,7 +6,7 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/31 18:59:29 by tpan              #+#    #+#             */
-/*   Updated: 2017/03/01 19:51:26 by tpan             ###   ########.fr       */
+/*   Updated: 2017/03/11 17:14:41 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ typedef struct		s_list
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
+
+typedef char		t_utf8;
 
 int					ft_strcmp(char *s1, char *s2);
 char				*ft_strcpy(char *dest, const char *src);
