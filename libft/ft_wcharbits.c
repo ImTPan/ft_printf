@@ -6,14 +6,14 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/12 15:24:15 by tpan              #+#    #+#             */
-/*   Updated: 2017/03/12 15:25:31 by tpan             ###   ########.fr       */
+/*   Updated: 2017/03/13 17:06:52 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
- ** Count nubmer of bits needed to represent a unicode code point.
+ ** Count number of bits needed to represent a unicode code point.
  */
 
 size_t		ft_wcharbits(wchar_t c)
