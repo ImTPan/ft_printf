@@ -6,11 +6,30 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/26 16:07:51 by tpan              #+#    #+#             */
-/*   Updated: 2017/02/27 10:42:49 by tpan             ###   ########.fr       */
+/*   Updated: 2017/03/14 16:02:44 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+static void			apply_width_char(t_conversion *conversion, char **draft)
+{
+	char	c;
+
+	if (ft_strlen(*draft) < conversion->width)
+	{
+		c = **draft;
+		ft_memdel((void **)draft);
+		*draft = ft_strnew(conversion->width);
+		if (conversion->flags.left_justify)
+		{
+			**draft = c;
+			ft_memset(*draft, (conversion->flags.pad_zeros ? '0' : ' '),
+													conversion->width - 1);
+			(*draft)[conversion->width - 1] = c;
+		}
+	}
+}
 
 static void			apply_width_str(t_conversion *conversion, char **draft)
 {

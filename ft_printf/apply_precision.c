@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 10:32:13 by tpan              #+#    #+#             */
-/*   Updated: 2017/02/27 10:48:31 by tpan             ###   ########.fr       */
+/*   Updated: 2017/03/14 14:08:30 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,19 +25,30 @@ static void			apply_precision_str(t_conversion *conversion, char **draft)
 	return ;
 }
 
+/*
+ ** Ints and hex values are padded with appended zeroes if the precision is
+ ** longer than the number of digits needed to display the number, but a
+ ** smaller precision will never truncate the number.
+ */
+
 static void			apply_precision_int(t_conversion *conversion, char **draft)
 {
 	char	*temp;
-	int		i;
+	size_t	i;
 
-	if (ft_strlen(*draft) < conversion->precision)
+	if (ft_strlen(*draft) < conversion->precision + conversion->int_negative)
 	{
 		temp = *draft;
-		*draft = ft_strnew(conversion->precision);
+		*draft = ft_strnew(conversion->precision + 1 + 
+													conversion->int_negative);
+		(*draft)[conversion->precision + conversion->int_negative] = '\0';
 		i = 0;
-		while (conversion->precision > ft_strlen(temp) + i)
+		if (conversion->int_negative)
+			(*draft)[i++] = '-';
+		while (i - conversion -> int_negative
+		< conversion->precision - ft_strlen(temp) + conversion->int_negative)
 			(*draft)[i++] = '0';
-		ft_strcpy(&((*draft)[i]), temp);
+		ft_strcpy(&((*draft)[i]), temp + conversion->int_negative);
 		ft_memdel((void **)&temp);
 	}
 	return ;

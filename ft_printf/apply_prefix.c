@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 10:31:00 by tpan              #+#    #+#             */
-/*   Updated: 2017/02/27 10:47:40 by tpan             ###   ########.fr       */
+/*   Updated: 2017/03/14 14:55:59 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ static void		apply_sign_prefix(char **draft)
 		i++;
 	if (i > 0 && (*draft)[i] != '0')
 		i--;
-	if ((*draft)[i] == '0' || (*draft)[i] == ' ')
+	else if ((*draft)[i] == ' ')
 		(*draft)[i] = prefix_char;
 	else
 	{

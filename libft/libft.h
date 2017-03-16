@@ -6,7 +6,7 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/31 18:59:29 by tpan              #+#    #+#             */
-/*   Updated: 2017/03/13 17:50:14 by tpan             ###   ########.fr       */
+/*   Updated: 2017/03/14 14:06:59 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ void				ft_putendl(char const *s);
 int					ft_isnegative(int c);
 char				*ft_realloc(char *ptr, size_t size);
 size_t				ft_wstrlen(wchar_t const *str);
-wchar_t				*ft_wstrndup(const char *s1, size_t n);
+wchar_t				*ft_wstrndup(const wchar_t *s1, size_t n);
 size_t				ft_wcharbits(wchar_t c);
 size_t				ft_wstrsize_utf8(const wchar_t *wstr);
 wchar_t				ft_utf8charencode(wchar_t c);
