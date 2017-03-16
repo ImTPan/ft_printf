@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 21:05:12 by tpan              #+#    #+#             */
-/*   Updated: 2017/02/27 22:03:49 by tpan             ###   ########.fr       */
+/*   Updated: 2017/03/08 10:38:24 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static void			apply_width_wint(t_conversion *conversion, wchar_t **draft)
     }
 }
 
-void				apply_width_wchar(t_conversion *conversion, wchar_t **draft)
+void			apply_width_wchar(t_conversion *conversion, wchar_t **draft)
 {
     if (conversion->specifier == STRING)
         apply_width_wstr(conversion, draft);
