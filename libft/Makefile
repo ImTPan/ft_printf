@@ -6,7 +6,7 @@
 #    By: tpan <marvin@42.fr>                        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/10/31 18:58:43 by tpan              #+#    #+#              #
-#    Updated: 2017/03/13 17:02:07 by tpan             ###   ########.fr        #
+#    Updated: 2017/03/18 16:44:10 by tpan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,9 +58,9 @@ $(NAME):
 	ranlib $(NAME) 
 
 clean:
-	rm -rf $(OBJ)
+	/bin/rm -f $(OBJ)
 
 fclean: clean
-	rm -rf $(NAME)
-
+	/bin/rm -f $(NAME)
+	/bin/rm -f libft.h.gch
 re: fclean all 
