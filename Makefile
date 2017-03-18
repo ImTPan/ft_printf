@@ -6,7 +6,7 @@
 #    By: tpan <marvin@42.fr>                        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/10/31 18:58:43 by tpan              #+#    #+#              #
-#    Updated: 2017/03/18 14:47:17 by tpan             ###   ########.fr        #
+#    Updated: 2017/03/18 16:29:09 by tpan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -129,6 +129,7 @@ FT_PRINTF_COMPILED =	read_flags.o \
 						write_unsigned_int.o \
 						write_wchars.o \
 						verify_flag_compatibility.o \
+						fix_sign.o \
 
 COMPILED =		$(LIBFT_COMPILED) $(FT_PRINTF_COMPILED)
 
