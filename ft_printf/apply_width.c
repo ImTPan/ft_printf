@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/26 16:07:51 by tpan              #+#    #+#             */
-/*   Updated: 2017/03/14 16:02:44 by tpan             ###   ########.fr       */
+/*   Updated: 2017/03/18 16:13:40 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,8 @@ static void			apply_width_int(t_conversion *conversion, char **draft)
 			ft_memset(*draft, (conversion->flags.pad_zeros ? '0' : ' '),
 										conversion->width - ft_strlen(temp));
 			ft_strcpy(&(*draft)[conversion->width - ft_strlen(temp)], temp);
+			if (conversion->flags.pad_zeros)
+				fix_sign(conversion, draft);
 		}
 		ft_memdel((void **)&temp);
 	}

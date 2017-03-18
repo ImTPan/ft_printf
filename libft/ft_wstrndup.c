@@ -6,13 +6,13 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 22:07:06 by tpan              #+#    #+#             */
-/*   Updated: 2017/02/28 22:07:07 by tpan             ###   ########.fr       */
+/*   Updated: 2017/03/18 15:36:55 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "libft.h"
 
-wchar_t		*ft_wstrndup(const char *s1, size_t n)
+wchar_t		*ft_wstrndup(const wchar_t *s1, size_t n)
 {
     wchar_t			*str;
     wchar_t			*p;

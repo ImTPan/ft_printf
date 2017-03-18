@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 21:05:12 by tpan              #+#    #+#             */
-/*   Updated: 2017/03/08 10:38:24 by tpan             ###   ########.fr       */
+/*   Updated: 2017/03/16 12:57:34 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,39 +14,39 @@
 
 static void			apply_width_wstr(t_conversion *conversion, wchar_t **draft)
 {
-    wchar_t		*temp;
+    wchar_t		*tmp;
     
     if (conversion->width > ft_wstrlen(*draft))
     {
-        temp = *draft;
+        tmp = *draft;
         *draft = (wchar_t *)ft_strnew(conversion->width * sizeof(wchar_t) + 3);
         if (conversion->flags.left_justify)
         {
-            ft_wstrcpy(*draft, temp);
-            ft_wchar_memset(&(*draft)[ft_wstrlen(temp)], ' ',
-                            conversion->width - ft_wstrlen(temp));
+            ft_wstrcpy(*draft, tmp);
+            ft_wchar_memset(&(*draft)[ft_wstrlen(tmp)], ' ',
+                            conversion->width - ft_wstrlen(tmp));
         }
         else
         {
-            ft_wchar_memset(*draft, ' ', conversion->width - ft_wstrlen(temp));
-            ft_wstrcpy(&(*draft)[conversion->width - ft_wstrlen(temp)], temp);
+            ft_wchar_memset(*draft, ' ', conversion->width - ft_wstrlen(tmp));
+            ft_wstrcpy(&(*draft)[conversion->width - ft_wstrlen(tmp)], tmp);
         }
-        ft_memdel((void **)&temp);
+        ft_memdel((void **)&tmp);
     }
     return ;
 }
 
 static void			apply_width_wint(t_conversion *conversion, wchar_t **draft)
 {
-    wchar_t		*temp;
+    wchar_t		*tmp;
     
     if (ft_wstrlen(*draft) < conversion->width)
     {
-        temp = *draft;
+        tmp = *draft;
         *draft = (wchar_t *)ft_strnew(conversion->width * sizeof(wchar_t) + 3);
         if (conversion->flags.left_justify)
         {
-            ft_wstrcpy(*draft, temp);
+            ft_wstrcpy(*draft, tmp);
             ft_wchar_memset(&(*draft)[ft_wstrlen(*draft)], ' ',
                             conversion->width - ft_wstrlen(*draft));
         }
@@ -54,10 +54,10 @@ static void			apply_width_wint(t_conversion *conversion, wchar_t **draft)
         {
             ft_wchar_memset(*draft,
                             (conversion->flags.pad_zeros ? '0' : ' '),
-                            conversion->width - ft_wstrlen(temp));
-            ft_wstrcpy(&(*draft)[conversion->width - ft_wstrlen(temp)], temp);
+                            conversion->width - ft_wstrlen(tmp));
+            ft_wstrcpy(&(*draft)[conversion->width - ft_wstrlen(tmp)], tmp);
         }
-        ft_memdel((void **)&temp);
+        ft_memdel((void **)&tmp);
     }
 }
 

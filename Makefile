@@ -6,7 +6,7 @@
 #    By: tpan <marvin@42.fr>                        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/10/31 18:58:43 by tpan              #+#    #+#              #
-#    Updated: 2017/03/13 22:59:27 by tpan             ###   ########.fr        #
+#    Updated: 2017/03/18 14:47:17 by tpan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -122,6 +122,13 @@ FT_PRINTF_COMPILED =	read_flags.o \
 						ft_printf.o \
 						ft_vprintf.o \
 						write_chars.o \
+						write_conversion_substring.o \
+						write_hex.o \
+						write_octal.o \
+						write_signed_int.o \
+						write_unsigned_int.o \
+						write_wchars.o \
+						verify_flag_compatibility.o \
 
 COMPILED =		$(LIBFT_COMPILED) $(FT_PRINTF_COMPILED)
 

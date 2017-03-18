@@ -6,7 +6,7 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/21 08:48:38 by tpan              #+#    #+#             */
-/*   Updated: 2017/02/23 20:00:58 by tpan             ###   ########.fr       */
+/*   Updated: 2017/03/18 14:39:19 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,37 @@ static int		read_conversion_substr(t_conversion *conversion,
 		return (INVALID);
 }
 
-static int		double_percent(t_format *format)
+static	int		double_percent(t_format *format)
 {
-	if(format->str[format->index] == '%')
+	if (format->str[format->index] == '%')
 	{
 		ft_putchar('%');
 		format->index++;
 		format->chars_written++;
 		return (1);
 	}
-	return (0);
+	return(0);
+}
+
+static void		double_percent_followup(t_conversion *conversion, 
+											t_format *format)
+{
+	int		i;
+
+	i = conversion->width;
+	if(format->str[format->index] == '%')
+	{
+		if (conversion->flags.left_justify)
+			ft_putchar('%');
+		if (conversion->width)
+			while (--i > 0)
+				ft_putchar(' ');
+		if (!conversion->flags.left_justify)
+			ft_putchar('%');
+		format->chars_written += (conversion->width ? conversion->width : 1);
+		format->index++;
+	}
+	return ;
 }
 
 static void	print_var(t_format *format, va_list ap)
@@ -48,13 +69,16 @@ static void	print_var(t_format *format, va_list ap)
 
 	if(double_percent(format))
 		return ;
+		ft_bzero(&conversion, sizeof(t_conversion));
 	if (read_conversion_substr(&conversion, ap, format) == VALID
 		&& compatible_flags(&conversion, format) == VALID)
 	{
-		write_conversion_res()
+		write_conversion_substring(&conversion, ap, format);
 		return ;
 	}
-
+	else
+		double_percent_followup(&conversion, format);
+	return ;
 }
 
 int				ft_vprintf(const char *format, va_list ap)

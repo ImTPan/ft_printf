@@ -6,7 +6,7 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/31 08:18:32 by tpan              #+#    #+#             */
-/*   Updated: 2017/03/14 13:45:04 by tpan             ###   ########.fr       */
+/*   Updated: 2017/03/18 16:09:54 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,11 +70,23 @@ int			read_precision(t_conversion *conversion, va_list ap,
 int			read_specifier(t_conversion *conversion, t_format *format);
 int			read_width(t_conversion *conversion, va_list arguments,
 				t_format *format);
-void		ft_vprintf(char *format, int ap);
+int			ft_vprintf(const char *format, va_list ap);
 void		apply_width_wchar(t_conversion *conversion, wchar_t **draft);
 void		apply_precision(t_conversion *conversion, char **draft);
 void		apply_prefix(t_conversion *conversion, char **draft);
 void		apply_width(t_conversion *conversion, char **draft);
-
-
+int			compatible_flags(t_conversion *conversion, t_format *format);
+void		write_conversion_substring(t_conversion *conversion, va_list ap, t_format *format);
+int			verify_flag_compatibility(t_conversion *conversion);
+void		write_chars(t_conversion *conversion, va_list ap, t_format *format);
+void		write_string(t_conversion *conversion, va_list ap, t_format *format);
+void		write_hex(t_conversion *conversion, va_list ap, t_format *format);
+void		write_octal(t_conversion *conversion, va_list ap, t_format *format);
+void		write_signed_int(t_conversion *conversion, va_list ap, t_format *format);
+uintmax_t	get_unsigned_int_arg(t_conversion *conversion, va_list ap);
+void		write_unsigned_int(t_conversion *conversion, va_list ap, t_format *format);
+void		write_wchar(t_conversion *conversion, va_list ap, t_format *format);
+void		write_wstring(t_conversion *conversion, va_list ap, t_format *format);
+void		apply_precision_wstr(t_conversion *conversion, wchar_t **draft);
+void		fix_sign(t_conversion *conversion, char **draft);
 #endif
