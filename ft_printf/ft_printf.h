@@ -6,7 +6,7 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/31 08:18:32 by tpan              #+#    #+#             */
-/*   Updated: 2017/03/18 16:09:54 by tpan             ###   ########.fr       */
+/*   Updated: 2017/03/18 16:26:37 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,5 +88,5 @@ void		write_unsigned_int(t_conversion *conversion, va_list ap, t_format *format)
 void		write_wchar(t_conversion *conversion, va_list ap, t_format *format);
 void		write_wstring(t_conversion *conversion, va_list ap, t_format *format);
 void		apply_precision_wstr(t_conversion *conversion, wchar_t **draft);
-void		fix_sign(t_conversion *conversion, char **draft);
+void		fix_sign_placement(t_conversion *conversion, char **draft);
 #endif
