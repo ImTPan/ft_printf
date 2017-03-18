@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/18 15:59:49 by tpan              #+#    #+#             */
-/*   Updated: 2017/03/18 16:00:07 by tpan             ###   ########.fr       */
+/*   Updated: 2017/03/18 16:22:56 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static char		get_sign(t_conversion *conversion, char **draft)
     return (sign);
 }
 
-void			fix_sign_placement(t_conversion *conversion, char **draft)
+void			fix_sign(t_conversion *conversion, char **draft)
 {
     int			i;
     char		sign;
