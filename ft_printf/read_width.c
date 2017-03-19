@@ -6,13 +6,13 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/15 18:07:06 by tpan              #+#    #+#             */
-/*   Updated: 2017/02/16 08:41:19 by tpan             ###   ########.fr       */
+/*   Updated: 2017/03/18 18:44:46 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		read_width(t_conversion *conversion, va_list arguments, 
+int		read_width(t_conversion *conversion, va_list ap, 
 		t_format *format)
 {
 	int holder;
@@ -22,6 +22,7 @@ int		read_width(t_conversion *conversion, va_list arguments,
 */
 	if(format->str[format->index] == '*')
 	{
+		holder = va_arg(ap, int);
 		if(holder < 0)
 		{
 			holder = -holder;
