@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/26 16:07:51 by tpan              #+#    #+#             */
-/*   Updated: 2017/03/18 16:36:32 by tpan             ###   ########.fr       */
+/*   Updated: 2017/03/18 18:53:07 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,9 @@ static void			apply_width_int(t_conversion *conversion, char **draft)
 
 void				apply_width(t_conversion *conversion, char **draft)
 {
-	if (conversion->specifier == STRING)
+	if (conversion->specifier == CHAR)
+		apply_width_char(conversion, draft);
+	else if (conversion->specifier == STRING)
 		apply_width_str(conversion, draft);
 	else
 		apply_width_int(conversion, draft);

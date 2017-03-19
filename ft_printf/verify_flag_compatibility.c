@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/18 12:29:03 by tpan              #+#    #+#             */
-/*   Updated: 2017/03/18 17:04:09 by tpan             ###   ########.fr       */
+/*   Updated: 2017/03/18 19:00:20 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,5 @@ int					verify_flag_compatibility(t_conversion *conversion)
 		return (INVALID);
 	if (show_positive_flag(conversion) == INVALID)
 		return (INVALID);
-	return (INVALID);
+	return (VALID);
 }

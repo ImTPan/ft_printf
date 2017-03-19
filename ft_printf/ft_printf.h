@@ -6,7 +6,7 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/31 08:18:32 by tpan              #+#    #+#             */
-/*   Updated: 2017/03/18 17:17:18 by tpan             ###   ########.fr       */
+/*   Updated: 2017/03/18 18:54:55 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ int			read_precision(t_conversion *conversion, va_list ap,
 int			read_specifier(t_conversion *conversion, t_format *format);
 int			read_width(t_conversion *conversion, va_list arguments,
 				t_format *format);
+int			ft_printf(const char *format, ...);
 int			ft_vprintf(const char *format, va_list ap);
 void		apply_width_wchar(t_conversion *conversion, wchar_t **draft);
 void		apply_precision(t_conversion *conversion, char **draft);
