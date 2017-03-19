@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/18 12:29:03 by tpan              #+#    #+#             */
-/*   Updated: 2017/03/18 12:56:51 by tpan             ###   ########.fr       */
+/*   Updated: 2017/03/18 17:04:09 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static int			hashtag_compatibility(t_conversion *conversion)
 {
 	if (conversion->flags.hash)
-		if(!(conversion->specifier == HEX_LOWER || 
+		if (!(conversion->specifier == HEX_LOWER ||
 				conversion->specifier == HEX_UPPER ||
 				conversion->specifier == OCTAL))
 			return (INVALID);
@@ -28,7 +28,7 @@ static int			zero_flag(t_conversion *conversion)
 		if (conversion->specifier == CHAR
 			|| conversion->specifier == STRING
 			|| conversion->specifier == POINTER)
-		return (INVALID);
+			return (INVALID);
 	return (VALID);
 }
 
@@ -36,7 +36,7 @@ static int			show_positive_flag(t_conversion *conversion)
 {
 	if (conversion->flags.pos_values_append_space
 			|| conversion->flags.show_sign)
-		if (conversion->specifier == U_DECIMAL 
+		if (conversion->specifier == U_DECIMAL
 		|| conversion->specifier == CHAR)
 		{
 			conversion->flags.pos_values_append_space = 0;
@@ -45,7 +45,7 @@ static int			show_positive_flag(t_conversion *conversion)
 	return (VALID);
 }
 
-int			verify_flag_compatibility (t_conversion *conversion)
+int					verify_flag_compatibility(t_conversion *conversion)
 {
 	if (hashtag_compatibility(conversion) == INVALID)
 		return (INVALID);
