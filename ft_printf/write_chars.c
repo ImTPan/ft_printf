@@ -6,7 +6,7 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/25 12:20:05 by tpan              #+#    #+#             */
-/*   Updated: 2017/03/19 19:13:40 by tpan             ###   ########.fr       */
+/*   Updated: 2017/03/20 15:08:23 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	write_chars(t_conversion *conversion, va_list ap,
 	c = va_arg(ap, int);
 	draft = ft_strnew(1);
 	*draft = c;
-	if ( !conversion->width && conversion->flags.pos_values_append_space)
+	if (!conversion->width && conversion->flags.pos_values_append_space)
 	{
 		ft_putchar(' ');
 		format->chars_written++;
@@ -52,11 +52,11 @@ void				write_string(t_conversion *conversion, va_list ap,
 {
     char	*draft;
     
-    draft = (char*)(va_arg(ap, char *));
+    draft = ft_strdup(va_arg(ap, char *));
     if (!draft)
 		{
-        draft = ft_strdup("(null)");
-		return ;
+			draft = ft_strdup("(null)");
+			return ;
 		}
     if (conversion->precision_set)
         apply_precision(conversion, &draft);
@@ -64,6 +64,6 @@ void				write_string(t_conversion *conversion, va_list ap,
         apply_width(conversion, &draft);
     ft_putstr(draft);
     format->chars_written += ft_strlen(draft);
-	//ft_strdel(&draft);
+	ft_memdel((void **)&draft);
 	return ;
 }
