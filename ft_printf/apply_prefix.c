@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 10:31:00 by tpan              #+#    #+#             */
-/*   Updated: 2017/03/18 16:59:59 by tpan             ###   ########.fr       */
+/*   Updated: 2017/03/19 19:47:39 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static void		apply_prefix_hex(t_conversion *conversion, char **draft)
 	else
 	{
 		temp = *draft;
-		*draft = ft_strnew(ft_strlen(*draft));
+		*draft = ft_strnew(ft_strlen(*draft + 1));
 		**draft = prefix_char;
 		ft_strcpy(&(*draft)[1], temp);
 		ft_memdel((void **)&temp);
@@ -50,7 +50,7 @@ static void		apply_space_prefix(char **draft)
 	else
 	{
 		temp = *draft;
-		*draft = ft_strnew(ft_strlen(*draft));
+		*draft = ft_strnew(ft_strlen(*draft + 1));
 		**draft = prefix_char;
 		ft_strcpy(&(*draft)[1], temp);
 		ft_memdel((void **)&temp);

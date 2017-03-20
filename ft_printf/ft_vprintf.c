@@ -6,7 +6,7 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/21 08:48:38 by tpan              #+#    #+#             */
-/*   Updated: 2017/03/19 18:41:25 by tpan             ###   ########.fr       */
+/*   Updated: 2017/03/19 19:52:49 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static void		double_percent_followup(t_conversion *conversion,
 	int		i;
 
 	i = conversion->width;
-	if(format->str[format->index] == '%')
+	if (format->str[format->index] == '%')
 	{
 		if (conversion->flags.left_justify)
 			ft_putchar('%');
