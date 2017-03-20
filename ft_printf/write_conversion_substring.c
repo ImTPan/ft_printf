@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/18 13:26:50 by tpan              #+#    #+#             */
-/*   Updated: 2017/03/18 13:35:45 by tpan             ###   ########.fr       */
+/*   Updated: 2017/03/19 18:44:32 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void		write_conversion_substring(t_conversion *conversion, va_list ap,
 	if (conversion->specifier == U_DECIMAL)
 		write_unsigned_int(conversion, ap, format);
 	if (conversion->specifier == HEX_UPPER
-		|| conversion->specifier == HEX_LOWER
-		|| conversion->specifier == POINTER)
+			|| conversion->specifier == HEX_LOWER
+			|| conversion->specifier == POINTER)
 		write_hex(conversion, ap, format);
 	if (conversion->specifier == OCTAL)
 		write_octal(conversion, ap, format);
@@ -30,7 +30,7 @@ void		write_conversion_substring(t_conversion *conversion, va_list ap,
 	else if (conversion->specifier == STRING)
 		write_string(conversion, ap, format);
 	if (conversion->specifier == CHAR && conversion->length >= L 
-		&& MB_CUR_MAX > 1)
+											&& MB_CUR_MAX > 1)
 		write_wchar(conversion, ap, format);
 	else if (conversion->specifier == CHAR)
 		write_chars(conversion, ap, format);

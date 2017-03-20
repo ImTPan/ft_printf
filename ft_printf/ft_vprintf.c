@@ -6,7 +6,7 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/21 08:48:38 by tpan              #+#    #+#             */
-/*   Updated: 2017/03/18 14:39:19 by tpan             ###   ########.fr       */
+/*   Updated: 2017/03/19 18:41:25 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ static void	print_var(t_format *format, va_list ap)
 
 	if(double_percent(format))
 		return ;
-		ft_bzero(&conversion, sizeof(t_conversion));
+	ft_bzero(&conversion, sizeof(t_conversion));
 	if (read_conversion_substr(&conversion, ap, format) == VALID
 		&& compatible_flags(&conversion, format) == VALID)
 	{
