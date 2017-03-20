@@ -6,7 +6,7 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/21 08:48:38 by tpan              #+#    #+#             */
-/*   Updated: 2017/03/19 19:52:49 by tpan             ###   ########.fr       */
+/*   Updated: 2017/03/20 15:34:30 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,10 @@ static void	print_var(t_format *format, va_list ap)
 	if (read_conversion_substr(&conversion, ap, format) == VALID
 		&& compatible_flags(&conversion, format) == VALID)
 	{
-		write_conversion_substring(&conversion, ap, format);
+		if (conversion.specifier == CHARS_WRITTEN)
+			store_chars_written(ap, format);
+		else
+			write_conversion_substring(&conversion, ap, format);
 		return ;
 	}
 	else

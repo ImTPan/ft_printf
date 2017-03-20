@@ -6,11 +6,20 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/18 15:59:49 by tpan              #+#    #+#             */
-/*   Updated: 2017/03/18 16:29:54 by tpan             ###   ########.fr       */
+/*   Updated: 2017/03/20 15:27:26 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+void			store_chars_written(va_list ap, t_format *format)
+{
+	int		*ptr;
+
+	ptr = va_arg(ap, int *);
+	*ptr = format->chars_written;
+	return ;
+}
 
 static char		get_sign(t_conversion *conversion, char **draft)
 {

@@ -6,7 +6,7 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/23 20:01:33 by tpan              #+#    #+#             */
-/*   Updated: 2017/03/18 15:53:36 by tpan             ###   ########.fr       */
+/*   Updated: 2017/03/20 16:31:42 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void			pos_values_append_space_corr(t_conversion *conversion)
 {
 	if (conversion->flags.pos_values_append_space 
 			&& conversion->flags.show_sign)
-		conversion->flags.pos_values_append_space = INVALID;
+		conversion->flags.pos_values_append_space = 0;
 	return ;
 }
 
@@ -24,7 +24,7 @@ static void			pad_zeros_corr(t_conversion *conversion)
 {
 	if (conversion->flags.pad_zeros)
 		if(conversion->flags.left_justify || conversion->precision_set)
-				conversion->flags.pad_zeros = 0;
+			conversion->flags.pad_zeros = 0;
 	return ;
 }
 

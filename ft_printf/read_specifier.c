@@ -6,7 +6,7 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/15 12:13:06 by tpan              #+#    #+#             */
-/*   Updated: 2017/02/23 10:13:25 by tpan             ###   ########.fr       */
+/*   Updated: 2017/03/20 15:41:26 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,9 @@ static t_specifier		compare_specifiers(char c)
 		return (STRING);
 	if (c == 'p')
 		return (POINTER);
-	else
-		return (INVALID_SPECIFIER);
+	if (c == 'n')
+		return (CHARS_WRITTEN);
+	return (INVALID_SPECIFIER);
 }
 
 int		read_specifier(t_conversion *conversion, t_format *format)

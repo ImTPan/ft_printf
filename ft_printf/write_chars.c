@@ -6,7 +6,7 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/25 12:20:05 by tpan              #+#    #+#             */
-/*   Updated: 2017/03/20 15:08:23 by tpan             ###   ########.fr       */
+/*   Updated: 2017/03/20 16:49:59 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +52,11 @@ void				write_string(t_conversion *conversion, va_list ap,
 {
     char	*draft;
     
-    draft = ft_strdup(va_arg(ap, char *));
-    if (!draft)
-		{
-			draft = ft_strdup("(null)");
-			return ;
-		}
+    draft = va_arg(ap, char *);
+	if (draft)
+		draft = ft_strdup(draft);
+	else
+		draft = ft_strdup("(null)");
     if (conversion->precision_set)
         apply_precision(conversion, &draft);
     if (conversion->width)

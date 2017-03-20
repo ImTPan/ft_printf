@@ -6,7 +6,7 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/31 08:18:32 by tpan              #+#    #+#             */
-/*   Updated: 2017/03/18 18:54:55 by tpan             ###   ########.fr       */
+/*   Updated: 2017/03/20 15:34:27 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ typedef enum		e_length
 typedef enum		e_specifier
 {
 	S_DECIMAL, U_DECIMAL, OCTAL, HEX_LOWER, HEX_UPPER, CHAR, STRING, POINTER,
-	INVALID_SPECIFIER
+	INVALID_SPECIFIER, CHARS_WRITTEN
 }					t_specifier;
 
 typedef struct		s_conversion
@@ -90,4 +90,6 @@ void		write_wchar(t_conversion *conversion, va_list ap, t_format *format);
 void		write_wstring(t_conversion *conversion, va_list ap, t_format *format);
 void		apply_precision_wstr(t_conversion *conversion, wchar_t **draft);
 void		fix_sign(t_conversion *conversion, char **draft);
+void		store_chars_written(va_list ap, t_format *format);
+
 #endif
