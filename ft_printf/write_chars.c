@@ -6,7 +6,7 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/25 12:20:05 by tpan              #+#    #+#             */
-/*   Updated: 2017/03/19 18:59:36 by tpan             ###   ########.fr       */
+/*   Updated: 2017/03/19 19:06:50 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,6 @@ void				write_string(t_conversion *conversion, va_list ap,
         apply_width(conversion, &draft);
     ft_putstr(draft);
     format->chars_written += ft_strlen(draft);
-    ft_memdel((void **)&draft);
-    return ;
+	//ft_strdel(&draft);
+	return ;
 }
