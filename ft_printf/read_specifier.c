@@ -6,13 +6,13 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/15 12:13:06 by tpan              #+#    #+#             */
-/*   Updated: 2017/03/20 15:41:26 by tpan             ###   ########.fr       */
+/*   Updated: 2017/03/20 17:39:39 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "ft_printf.h"
+#include "ft_printf.h"
 
-static t_specifier		compare_specifiers(char c)
+static t_specifier	compare_specifiers(char c)
 {
 	if (c == 'd' || c == 'i' || c == 'D')
 		return (S_DECIMAL);
@@ -35,17 +35,17 @@ static t_specifier		compare_specifiers(char c)
 	return (INVALID_SPECIFIER);
 }
 
-int		read_specifier(t_conversion *conversion, t_format *format)
+int					read_specifier(t_conversion *conversion, t_format *format)
 {
 	char	c;
 
-	if(!format->str[format->index])
+	if (!format->str[format->index])
 		return (INVALID);
 	c = format->str[format->index];
 	conversion->specifier = compare_specifiers(format->str[format->index]);
 	if (conversion->specifier == INVALID_SPECIFIER)
 		return (INVALID);
-	if (c =='D' || c == 'U' || c == 'O' || c == 'C' || c == 'S')
+	if (c == 'D' || c == 'U' || c == 'O' || c == 'C' || c == 'S')
 		conversion->length = L;
 	format->index++;
 	return (VALID);

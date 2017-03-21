@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/26 16:07:51 by tpan              #+#    #+#             */
-/*   Updated: 2017/03/18 18:53:07 by tpan             ###   ########.fr       */
+/*   Updated: 2017/03/20 17:12:03 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void			apply_width_char(t_conversion *conversion, char **draft)
 		if (conversion->flags.left_justify)
 		{
 			**draft = c;
-			ft_memset(&(*draft)[1], ' ', conversion->width -1);
+			ft_memset(&(*draft)[1], ' ', conversion->width - 1);
 		}
 		else
 		{

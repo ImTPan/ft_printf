@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/18 13:26:50 by tpan              #+#    #+#             */
-/*   Updated: 2017/03/19 18:44:32 by tpan             ###   ########.fr       */
+/*   Updated: 2017/03/20 17:44:49 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void		write_conversion_substring(t_conversion *conversion, va_list ap,
 		write_wstring(conversion, ap, format);
 	else if (conversion->specifier == STRING)
 		write_string(conversion, ap, format);
-	if (conversion->specifier == CHAR && conversion->length >= L 
+	if (conversion->specifier == CHAR && conversion->length >= L
 											&& MB_CUR_MAX > 1)
 		write_wchar(conversion, ap, format);
 	else if (conversion->specifier == CHAR)

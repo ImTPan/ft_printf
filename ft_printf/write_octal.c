@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/18 14:44:12 by tpan              #+#    #+#             */
-/*   Updated: 2017/03/18 17:05:34 by tpan             ###   ########.fr       */
+/*   Updated: 2017/03/20 17:50:23 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void				write_octal(t_conversion *conversion, va_list ap,
 {
 	char		*draft;
 	uintmax_t	value;
-	
+
 	value = get_unsigned_int_arg(conversion, ap);
 	if (!value && conversion->precision_set)
 		draft = ft_strdup("");

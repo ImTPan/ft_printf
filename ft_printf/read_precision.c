@@ -6,7 +6,7 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/15 11:41:37 by tpan              #+#    #+#             */
-/*   Updated: 2017/03/20 16:02:22 by tpan             ###   ########.fr       */
+/*   Updated: 2017/03/20 17:37:50 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int		treat_negative_precision_as_none(t_conversion *conversion,
 	return (VALID);
 }
 
-static int		wildcard_precision(t_conversion *conversion, va_list ap, 
+static int		wildcard_precision(t_conversion *conversion, va_list ap,
 		t_format *format)
 {
 	int		tmp;

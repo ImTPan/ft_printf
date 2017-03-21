@@ -6,7 +6,7 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/21 08:48:38 by tpan              #+#    #+#             */
-/*   Updated: 2017/03/20 15:34:30 by tpan             ###   ########.fr       */
+/*   Updated: 2017/03/20 17:36:50 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,10 @@ static	int		double_percent(t_format *format)
 		format->chars_written++;
 		return (1);
 	}
-	return(0);
+	return (0);
 }
 
-static void		double_percent_followup(t_conversion *conversion, 
+static void		double_percent_followup(t_conversion *conversion,
 											t_format *format)
 {
 	int		i;
@@ -63,11 +63,11 @@ static void		double_percent_followup(t_conversion *conversion,
 	return ;
 }
 
-static void	print_var(t_format *format, va_list ap)
+static void		print_var(t_format *format, va_list ap)
 {
 	t_conversion	conversion;
 
-	if(double_percent(format))
+	if (double_percent(format))
 		return ;
 	ft_bzero(&conversion, sizeof(t_conversion));
 	if (read_conversion_substr(&conversion, ap, format) == VALID
@@ -86,24 +86,24 @@ static void	print_var(t_format *format, va_list ap)
 
 int				ft_vprintf(const char *format, va_list ap)
 {
-    t_format	format_tracker;
-    
-    if (!format)
-        return (0);
-    ft_bzero(&format_tracker, sizeof(t_format));
-    format_tracker.str = format;
-    while (format_tracker.str[format_tracker.index] != '\0')
-    {
-        if (format_tracker.str[format_tracker.index] == '%')
-        {
-            format_tracker.index++;
-            print_var(&format_tracker, ap);
-        }
-        else
-        {
-            ft_putchar(format_tracker.str[format_tracker.index++]);
-            format_tracker.chars_written++;
-        }
-    }
-    return (format_tracker.chars_written);
+	t_format	format_tracker;
+
+	if (!format)
+		return (0);
+	ft_bzero(&format_tracker, sizeof(t_format));
+	format_tracker.str = format;
+	while (format_tracker.str[format_tracker.index] != '\0')
+	{
+		if (format_tracker.str[format_tracker.index] == '%')
+		{
+			format_tracker.index++;
+			print_var(&format_tracker, ap);
+		}
+		else
+		{
+			ft_putchar(format_tracker.str[format_tracker.index++]);
+			format_tracker.chars_written++;
+		}
+	}
+	return (format_tracker.chars_written);
 }
