@@ -6,13 +6,13 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/11 16:28:34 by tpan              #+#    #+#             */
-/*   Updated: 2017/03/11 16:30:30 by tpan             ###   ########.fr       */
+/*   Updated: 2017/03/20 19:56:50 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_topupper_str(char*str)
+char		*ft_topupper_str(char *str)
 {
 	char	*temp;
 
@@ -20,7 +20,7 @@ char		*ft_topupper_str(char*str)
 	while (*temp != '\0')
 	{
 		if (*temp >= 97 && *temp <= 122)
-			*temp -=32;
+			*temp -= 32;
 		temp++;
 	}
 	return (str);

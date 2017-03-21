@@ -6,16 +6,15 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/11 16:57:24 by tpan              #+#    #+#             */
-/*   Updated: 2017/03/11 17:12:58 by tpan             ###   ########.fr       */
+/*   Updated: 2017/03/20 20:13:47 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
- ** Encodes a string of wchar unicode code points in UTF8
- **
- */
+**Encodes a string of wchar unicode code points in UTF8
+*/
 
 t_utf8			*ft_utf8strencode(const wchar_t *wstr)
 {

@@ -6,7 +6,7 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/01 14:51:12 by tpan              #+#    #+#             */
-/*   Updated: 2017/03/19 18:28:35 by tpan             ###   ########.fr       */
+/*   Updated: 2017/03/20 20:00:27 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 char	*ft_strdup(const char *s1)
 {
-    char	*s2;
-    
-    s2 = (char *)malloc((ft_strlen(s1) + 1) * (sizeof(char)));
-    if (s2 == NULL)
-        return (NULL);
-    return (ft_strcpy(s2, s1));
+	char	*s2;
+
+	s2 = (char *)malloc((ft_strlen(s1) + 1) * (sizeof(char)));
+	if (s2 == NULL)
+		return (NULL);
+	return (ft_strcpy(s2, s1));
 }

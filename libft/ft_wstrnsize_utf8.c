@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/12 15:54:11 by tpan              #+#    #+#             */
-/*   Updated: 2017/03/12 15:56:58 by tpan             ###   ########.fr       */
+/*   Updated: 2017/03/20 20:01:24 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ size_t			ft_wstrnsize_utf8(const wchar_t *wstr, size_t n)
 	size_t		i;
 
 	if (!wstr)
-		return(0);
+		return (0);
 	i = 0;
 	size = 0;
 	while (wstr[i] != '\0' && i < n)

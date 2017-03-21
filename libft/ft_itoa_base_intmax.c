@@ -6,7 +6,7 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/11 12:46:41 by tpan              #+#    #+#             */
-/*   Updated: 2017/03/11 13:42:55 by tpan             ###   ########.fr       */
+/*   Updated: 2017/03/20 20:12:08 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,40 +15,40 @@
 #include "libft.h"
 
 /*
- ** ft_itoa_base takes a number and returns it as a string in whichever base
- ** is specified, up to 16.
- */
+** ft_itoa_base takes a number and returns it as a string in whichever base
+** is specified, up to 16.
+*/
 
 /*
- ** generate_base_digit_array cetes an array of chars "123456789ABCDEF"
- */
+** generate_base_digit_array cetes an array of chars "123456789ABCDEF"
+*/
 
 static void		generate_base_digit_array(char *arr)
 {
-		int		i;
+	int i;
 
-		i = 0;
-		while (i < 10)
-		{
-			arr[i] = i + '0';
-			i++;
-		}
-		while (i < 16)
-		{
-			arr[i] = i + 'A' - 10;
-			i++;
-		}
+	i = 0;
+	while (i < 10)
+	{
+		arr[i] = i + '0';
+		i++;
+	}
+	while (i < 16)
+	{
+		arr[i] = i + 'A' - 10;
+		i++;
+	}
 }
 
 /*
- ** calc_indices calculates the index (in the base_digit_array) which
- ** corresponds to the character that represents the next digit in base /base/.
- ** These indices are saved to the indices array.
- */
+** calc_indices calculates the index (in the base_digit_array) which
+** corresponds to the character that represents the next digit in base /base/.
+** These indices are saved to the indices array.
+*/
 
 static int		calc_indices(int *indices, uintmax_t value, int base)
 {
-	int		i;
+	int i;
 
 	i = 0;
 	while (value != 0)
@@ -60,11 +60,11 @@ static int		calc_indices(int *indices, uintmax_t value, int base)
 }
 
 /*
- ** create_base_str access the digits array at the indices stored in the indices
- ** array to create the string which will be returned;
- */
+** create_base_str access the digits array at the indices stored in the indices
+** array to create the string which will be returned;
+*/
 
-static char		*create_base_str(char *digits, int *indices, int i, 
+static char		*create_base_str(char *digits, int *indices, int i,
 																intmax_t value)
 {
 	int		j;
@@ -81,9 +81,9 @@ static char		*create_base_str(char *digits, int *indices, int i,
 }
 
 /*
- **	ft_itoa_base takes a number and returns it as a string in whichever base is
- ** specified, up to 16.
- */
+**	ft_itoa_base takes a number and returns it as a string in whichever base is
+** specified, up to 16.
+*/
 
 char			*ft_itoa_base_intmax(intmax_t value, int base)
 {
@@ -96,8 +96,7 @@ char			*ft_itoa_base_intmax(intmax_t value, int base)
 		return (ft_strdup("0"));
 	if (base < 2 || base > 16)
 		return (NULL);
-
-	abs_val = (value < 0 ? -value: value);
+	abs_val = (value < 0 ? -value : value);
 	generate_base_digit_array(base_digits);
 	i = calc_indices(conversion_index, abs_val, base);
 	return (create_base_str(base_digits, conversion_index, i, value));

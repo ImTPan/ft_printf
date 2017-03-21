@@ -6,16 +6,16 @@
 /*   By: tpan <tpan@student.42.us.org>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/11 16:30:50 by tpan              #+#    #+#             */
-/*   Updated: 2017/03/11 16:45:32 by tpan             ###   ########.fr       */
+/*   Updated: 2017/03/20 20:13:01 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
- **	Encodes a wchar_t unicode code point to UTF-8 of returns the "substitute" 
- **	character.
- */
+**Encodes a wchar_t unicode code point to UTF-8 of returns the "substitute"
+**character.
+*/
 
 wchar_t			ft_utf8charencode(wchar_t c)
 {
