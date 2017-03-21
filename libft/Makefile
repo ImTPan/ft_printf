@@ -6,15 +6,13 @@
 #    By: tpan <marvin@42.fr>                        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/10/31 18:58:43 by tpan              #+#    #+#              #
-#    Updated: 2017/03/18 16:44:10 by tpan             ###   ########.fr        #
+#    Updated: 2017/03/20 20:35:11 by tpan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= libft.a
 
-CC		= gcc
-
-CFLAGS 	= -Wall -Wextra -Werror
+CFLAGS 	= -c -Wall -Wextra -Werror
 
 SRC 	= ft_strlen.c ft_strncpy.c ft_strcpy.c \
 		  ft_strcmp.c ft_putchar.c ft_putstr.c \
@@ -53,7 +51,7 @@ OBJ 	= $(SRC:.c=.o)
 all: $(NAME)
 
 $(NAME): 
-	$(CC) $(CFLAGS) -c $(SRC)
+	gcc $(OBJ) $(CFLAGS) $(SRC)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME) 
 
