@@ -6,7 +6,7 @@
 /*   By: tpan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/15 18:07:06 by tpan              #+#    #+#             */
-/*   Updated: 2017/03/20 17:41:55 by tpan             ###   ########.fr       */
+/*   Updated: 2017/03/22 12:26:52 by tpan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int		read_width(t_conversion *conversion, va_list ap,
 		if (holder < 0)
 		{
 			holder = -holder;
-			conversion->flags.left_justify = 21;
+			conversion->flags.left_justify = 2;
 		}
 		conversion->width = holder;
 		format->index++;
